@@ -5,8 +5,4 @@
 ```uvicorn app.main:app --reload```
 
 ## FRONTEND
-```
-npm create vite@latest .
-npm install react-router-dom axios tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
+```npm  run dev```
