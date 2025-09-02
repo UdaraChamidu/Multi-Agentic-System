@@ -69,3 +69,27 @@ button {
 button:hover {
   background-color: #005bb5;
 }
+
+
+/* Add to styles.css */
+.chat-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-user {
+  background-color: #0077ff;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-agent {
+  background-color: #eee;
+  color: black;
+  margin-right: auto;
+  text-align: left;
+}

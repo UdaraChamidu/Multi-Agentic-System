@@ -11,7 +11,16 @@ const ChatBox = () => {
     setMessages([...messages, userMsg]);
 
     const res = await postTask({ task: input });
-    const agentMsg = { sender: "Agent", text: JSON.stringify(res) };
+
+    // Format agent response
+    const result = res.result;
+    const taskText = result?.task_executed?.task || "";
+    const dataText = JSON.stringify(result?.data_used || {});
+    const agentMsg = {
+      sender: "Agent",
+      text: `Task received: ${taskText}\nData used: ${dataText}`,
+    };
+
     setMessages((prev) => [...prev, agentMsg]);
     setInput("");
   };
@@ -20,11 +29,18 @@ const ChatBox = () => {
     <div>
       <div className="chat-box">
         {messages.map((msg, idx) => (
-          <div key={idx}>
-            <b>{msg.sender}:</b> {msg.text}
+          <div
+            key={idx}
+            className={`chat-message ${
+              msg.sender === "User" ? "chat-user" : "chat-agent"
+            }`}
+          >
+            <b>{msg.sender}:</b> <br />
+            {msg.text}
           </div>
         ))}
       </div>
+
       <input
         type="text"
         value={input}
