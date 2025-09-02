@@ -1,13 +1,12 @@
 import React from "react";
 import AgentStatus from "../components/AgentStatus";
-import ChatBox from "../components/ChatBox";
 
 const Dashboard = () => {
   return (
-    <div className="container">
+    <div>
+      <div className="header">Dashboard</div>
       <AgentStatus />
-      <h2>Multi-Agent Chat</h2>
-      <ChatBox />
+      <p>Welcome to the Multi-Agent System Dashboard!</p>
     </div>
   );
 };

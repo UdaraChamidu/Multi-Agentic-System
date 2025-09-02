@@ -6,8 +6,34 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
   padding: 20px;
 }
 
@@ -15,7 +41,7 @@ body {
   background-color: #0077ff;
   color: white;
   padding: 15px;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .chat-box {
@@ -26,8 +52,20 @@ body {
   overflow-y: auto;
 }
 
-.sidebar {
-  border-right: 1px solid #ccc;
-  padding: 15px;
-  background: #eee;
+input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005bb5;
 }
