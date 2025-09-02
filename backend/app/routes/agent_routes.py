@@ -12,3 +12,8 @@ async def get_status():
 async def create_task(task: dict):
     result = controller.handle_task(task)
     return {"result": result}
+
+# New analytics endpoint
+@router.get("/analytics")
+async def get_analytics():
+    return controller.get_analytics()
